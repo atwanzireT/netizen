@@ -82,18 +82,18 @@
 						{% if user.id is not None%}
 						<div class="header-author d-flex ml-lg-4 pl-2 mt-lg-0 mt-3">
 							<div class="author align-items-center">
-								<img src="{% static 'assets/images/a1.jpg' %}" alt="" width="50px" class="img-fluid rounded-circle" />
+								<img src="{% static 'assets/images/user.png' %}" alt="" width="40px" class="img-fluid rounded-circle" />
 							</div>
 							<div class="align-self ml-3">
 								<a href="#author">
 									<h5>{{user.username}}</h5>
 								</a>
-								<span>active</span>
+								<a href="{% url 'logout' %}">Logout</a>
 							</div>
 						</div>
 						{% else %}
 							<li class="nav-item @@contact__active"><a class="nav-link" href="/profile/register">Join Netizen</a></li>
-							<li class="nav-item @@contact__active"><a class="nav-link" href="/profile/login/">Login</a></li>
+							<li class="nav-item @@contact__active"><a class="nav-link" href="/profile/login">Login</a></li>
 						{% endif %}
 					</ul>
 				</div>

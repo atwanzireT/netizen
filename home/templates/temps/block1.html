@@ -55,7 +55,7 @@
                 <div class="topics">
                     <h3 class="section-title-left mb-4"> Topics</h3>
                     {% for x in category %}
-                    <a href="#" class="topics-list" style="margin-top: 10px;">
+                    <a href="/category/{{x.id}}" class="topics-list" style="margin-top: 10px;">
                         <div class="list1">
                             <span class="fa fa-{{x.icon}}"></span>
                             <h4>{{x.title}}</h4>

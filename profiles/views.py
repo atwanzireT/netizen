@@ -4,6 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate,login, logout, update_session_auth_hash
+from .forms import SignupForm
 
 # Create your views here.
 def login(request):
@@ -14,7 +15,7 @@ def logout_func(request):
     return HttpResponseRedirect('/')
 	
 class UserRegistrationView(generic.CreateView):
-	form_class = UserCreationForm
+	form_class = SignupForm
 	template_name = 'registration/registration.html'
 	success_url = reverse_lazy('login')
 
