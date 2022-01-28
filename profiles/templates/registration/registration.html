@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w3l-contact-10 py-5" id="contact">
+    <div class="form-41-mian pt-lg-4 pt-md-3 pb-md-4">
+        <div class="container">
+            <div class="heading">
+                <h3 class="category-title mb-3">Sign Up </h3>
+                <p class="mb-md-5 mb-4">Sign Up to Fully Interact with the site</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 form-inner-cont">
+                    <form action="" method="post" class="signin-form">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <div class="text-center">
+                            <br>
+                            <button class="btn btn-style btn-outline-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-4 contacts-5-grid-main section-gap mt-lg-0 mt-5">
+                    <div class="contacts-5-grid">
+                        <h3 class="section-title-left mb-4">  </h3>
+                        <div class="map-content-5">
+                            <section class="tab-content">
+                                <div class="contact-type">
+                                    <div class="address-grid mb-4">
+                                        <h6>Security</h6>
+                                        <p>Your Accounts are fully Protected</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //contacts-5-grid -->
+    </div>
+</div>
+{% endblock %}

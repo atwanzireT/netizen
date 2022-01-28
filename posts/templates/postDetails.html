@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="w3l-homeblock2 py-5">
+    <div class="container pt-md-4 pb-md-5">
+        <!-- block -->
+        <div class="w3l-contact-10 py-5" id="contact">
+            <div class="form-41-mian pt-lg-4 pt-md-3 pb-md-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 form-inner-cont">
+                            <h3 class="category-title mb-3"> {{post.title}}</h3>
+                            <span class="label-blue mb-sm-4 mb-3">{{post.category}}</span>
+                            <p class="mb-sm-5 mb-4 max-width">{{post.details|safe}}</p>
+                        </div>
+        
+                        <div class="col-lg-4 contacts-5-grid-main section-gap mt-lg-0 mt-5">
+                            <div class="contacts-5-grid">
+                                <h3 class="section-title-left mb-4">  </h3>
+                                <div class="map-content-5">
+                                    <section class="tab-content">
+                                        <div class="contact-type">
+                                            <div class="address-grid mb-4">
+                                                <h6>Security</h6>
+                                                <p>Your Posts are copyrighted to you</p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //contacts-5-grid -->
+            </div>
+        </div>
+
+        <div class="row">
+            {% for x in postlist %}
+            <div class="col-lg-4 col-md-6 item">
+                <div class="card">
+                    <div class="card-header p-0 position-relative">
+                        <a href="/article/postDetail/{{x.id}}">
+                            <img class="card-img-bottom d-block radius-image-full" style="height: 250px;"
+                                src="{{x.image.url}}" alt="Card image cap">
+                        </a>
+                    </div>
+                    <div class="card-body blog-details" style="height: 300px;">
+                        <span class="label-blue"><a href="">{{x.category}}</a></span>
+                        <a href="/article/postDetail/{{x.id}}" class="blog-desc">{{x.title |truncatechars:90 }}
+                        </a>
+                        <div class="author align-items-center mt-3 mb-1">
+                            <img src="{% static 'assets/images/a2.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                            <ul class="blog-meta">
+                                <li>
+                                    <a href="#">{{x.author}}</a> </a>
+                                    <form action="/" method="Post">
+                                        {% csrf_token %}
+                                        <button class="btn btn-light btn-sm" type="submit" name="post_id" value="{{x.id}}">
+                                            <i class="fa fa-heart" aria-hidden="true" id="like"></i>
+                                        </button>
+                                    </form>
+                                </li>
+                                <li class="meta-item blog-lesson">
+                                    <span class="meta-value"> {{x.created}} </span>. <span
+                                        class="meta-value ml-2"><span class="fa fa-clock-o"></span>{{x.created|timesince }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% load static %}
+<style>
+    .fa-heart {
+        color: black;
+        stroke: black;
+        stroke-width: 20px;
+    }
+</style>
+<div class="w3l-homeblock2 py-5">
+    <div class="container py-lg-5 py-md-4">
+        <!-- block -->
+        <div class="row">
+            <div class="col-lg-8">
+                <h3 class="section-title-left mb-4"> Editor's Pick </h3>
+                <div class="row">
+                    {% for x in editorsPick %}
+                    <div class="col-lg-6 col-md-6 mt-md-0 mt-sm-5 mt-4">
+                        <div class="card">
+                            <div class="card-header p-0 position-relative">
+                                <a href="/article/postDetail/{{x.id}}">
+                                    <img class="card-img-bottom d-block radius-image-full" style="height: 250px;"
+                                        src="{{x.image.url}}" alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body blog-details" style="height: 300px;">
+                                <span class="label-blue"><a href="">{{x.category}}</a></span>
+                                <a href="/article/postDetail/{{x.id}}" class="blog-desc">{{x.title |truncatechars:90 }}
+                                </a>
+                                <div class="author align-items-center mt-3 mb-1">
+                                    <img src="{% static 'assets/images/a2.jpg' %}" alt=""
+                                        class="img-fluid rounded-circle" />
+                                    <ul class="blog-meta">
+                                        <li>
+                                            <a href="#">{{x.author}}</a> </a>
+                                        </li>
+                                        <li class="meta-item blog-lesson">
+                                            <span class="meta-value"> {{x.created}} </span>. <span
+                                                class="meta-value ml-2"><span
+                                                    class="fa fa-clock-o"></span>{{x.created|timesince }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="mt-4 left-right bg-clr-white p-3">
+                    <h3 class="section-title-left align-self pl-2 mb-sm-0 mb-3">Advertise with us </h3>
+                    <a class="btn btn-style btn-primary" href="#url">Learn more</a>
+                </div>
+            </div>
+            <div class="col-lg-4 trending mt-lg-0 mt-5">
+                <div class="topics">
+                    <h3 class="section-title-left mb-4"> Topics</h3>
+                    {% for x in category %}
+                    <a href="#" class="topics-list" style="margin-top: 10px;">
+                        <div class="list1">
+                            <span class="fa fa-{{x.icon}}"></span>
+                            <h4>{{x.title}}</h4>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="sponsers mt-5">
+                    <h3 class="section-title-left mb-4"> Our sponsers</h3>
+                    <a href="#ad-banner"><img src="{% static 'assets/images/ad.jpg' %}" alt=""
+                            class="img-fluid radius-image-full" /></a>
+                    <a href="#advertise" class="text-center d-block text-uppercase">Advertise with us </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

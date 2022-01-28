@@ -1,0 +1,40 @@
+    <div class="container py-lg-5 py-md-4">
+        <!-- block -->
+        <div class="left-right">
+            <h3 class="section-title-left mb-sm-4 mb-2"> Latest News</h3>
+            <a href="beauty.html" class="more btn btn-small mb-sm-0 mb-4">View more</a>
+        </div>
+        <div class="row">
+            {% for x in latest_news reversed %}
+            <div class="col-lg-6">
+                <div class="bg-clr-white hover-box">
+                    <div class="row">
+                        <div class="col-sm-5 position-relative">
+                            <a href="#blog-single.html" class="image-mobile">
+                                <img class="card-img-bottom d-block radius-image-full" style="height: 180px;" src="{{x.image.url}}"
+                                    alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="col-sm-7 card-body blog-details align-self">
+                            <a href="#blog-single.html" class="blog-desc">{{x.title}}
+                            </a>
+                            <div class="author align-items-center">
+                                <img src="assets/images/a1.jpg" alt="" class="img-fluid rounded-circle" />
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="author.html">{{x.author}}</a> </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> July 13, 2020 </span>. <span
+                                            class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<section class="w3l-homeblock1 py-sm-5 py-4">
+    <div class="container py-md-4">
+        <div class="grids-area-hny main-cont-wthree-fea row">
+            {% for x in category %}
+            <div class="col-lg-3 col-6 grids-feature" style="margin-top: 10px;">
+                <a href="/category/{{x.id}}">
+                    <div class="area-box">
+                        <!-- <img src="{{x.image.url}}" alt="" width="50px"> -->
+                        <span class="{{x.icon}}" style="font-size: 30px;"></span>
+                        <h4 class="title-head">{{x.title}}</h4>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            <div class="col-lg-3 col-6 grids-feature" style="margin-top: 10px;">
+                <a href="beauty.html">
+                    <div class="area-box">
+                        <span class="fas fa-arrow-right" style="font-size: 30px;"></span>
+                        <h4 class="title-head">More</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //homeblock1-->
