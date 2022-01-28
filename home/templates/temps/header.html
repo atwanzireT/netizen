@@ -65,20 +65,15 @@
 						<li class="nav-item active">
 							<a class="nav-link" href="/">Home</a>
 						</li>
-						<li class="nav-item dropdown @@pages__active">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								category <span class="fa fa-angle-down"></span>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item @@b__active" href="beauty.html">Beauty</a>
-								<a class="dropdown-item @@fa__active" href="fashion.html">Fashion & Style</a>
-							</div>
-						</li> 
+
 						<li class="nav-item @@contact__active">
 							<a class="nav-link" href="contact.html">Contact</a>
 						</li>
-
+						{% if user.id is not None%}
+						<li class="nav-item">
+							<a class="nav-link" href="/article/addpost/">Create Post</a>
+						</li>
+						{% endif %}
 						{% if user.id is not None%}
 						<div class="header-author d-flex ml-lg-4 pl-2 mt-lg-0 mt-3">
 							<div class="author align-items-center">
